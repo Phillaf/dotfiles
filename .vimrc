@@ -1,6 +1,3 @@
-" Pathogen
-execute pathogen#infect()
-
 " Can't remember what this was for
 :set background&
 
@@ -34,4 +31,3 @@ nnoremap <F3> :set hlsearch!<CR>
 
 " Indentation
 set smartindent
-
