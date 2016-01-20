@@ -1,14 +1,18 @@
 
-" Vundle config
+" Vundle config start
 set nocompatible              " be iMproved, required
 filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'mattn/emmet-vim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'shawncpllus/phpcomplete.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
+" Vundle config end
 
 " Can't remember what this was for
 :set background&
@@ -43,3 +47,8 @@ nnoremap <F3> :set hlsearch!<CR>
 
 " Indentation
 set smartindent
+
+" AutoCompletion settings
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+autocmd FileType ctp set omnifunc=phpcomplete#CompletePHP
+autocmd CompleteDone * pclose
