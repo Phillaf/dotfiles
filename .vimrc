@@ -1,3 +1,7 @@
+" Pathogen
+execute pathogen#infect()
+
+" Can't remember what this was for
 :set background&
 
 " Set filetype colors
@@ -30,3 +34,4 @@ nnoremap <F3> :set hlsearch!<CR>
 
 " Indentation
 set smartindent
+
