@@ -52,3 +52,6 @@ set smartindent
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType ctp set omnifunc=phpcomplete#CompletePHP
 autocmd CompleteDone * pclose
+
+" Disable error bell
+set noeb vb t_vb=
