@@ -8,5 +8,4 @@ README.md
 !.tmux.conf
 !.vimrc
 
-# even if they are in subdirectories
-!*/.vim
+# whitelist subdirectory example: !*/.vim
