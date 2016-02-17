@@ -8,14 +8,20 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'shawncpllus/phpcomplete.vim'
+Plugin 'shawncplus/phpcomplete.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'scrooloose/syntastic'
+Bundle 'altercation/vim-colors-solarized'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
 " Vundle config end
 
-" Can't remember what this was for
-:set background&
+" Not sure why, but gnome terminal doesn't show colors correctly without
+" re-setting the background. 
+set background&
+hi Visual ctermfg=white ctermbg=darkgray
+hi Search ctermfg=black ctermbg=yellow
 
 " Set filetype colors
 syntax on
@@ -23,7 +29,6 @@ filetype on
 au BufNewFile,BufRead *.ino set filetype=cpp
 
 " Use spaces instad of tabs
-set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set smarttab
@@ -55,3 +60,15 @@ autocmd CompleteDone * pclose
 
 " Disable error bell
 set noeb vb t_vb=
+
+" Syntastic settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_php_phpcs_args='--standard=CakePHP'

@@ -12,4 +12,4 @@ fi
 
 setxkbmap -option ctrl:nocaps
 
-alias phpcs='vendor/bin/phpcs -p --extensions=php --standard=vendor/cakephp/cakephp-codesniffer/CakePHP ./src'
+alias phpcs='phpcs -p --extensions=php --standard=CakePHP ./src'
