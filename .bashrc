@@ -13,3 +13,4 @@ fi
 setxkbmap -option ctrl:nocaps
 
 alias phpcs='phpcs -p --extensions=php --standard=CakePHP ./src'
+alias ctags='ctags -R --exclude=.git --exclude=*assets/vendor --exclude=*webroot --exclude=node_modules --fields=+l'

@@ -59,6 +59,7 @@ set smartindent
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType ctp set omnifunc=phpcomplete#CompletePHP
 autocmd CompleteDone * pclose
+let g:ycm_collect_identifiers_from_tags_files = 1
 
 " Disable error bell
 set noeb vb t_vb=
