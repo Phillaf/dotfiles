@@ -1,8 +1,8 @@
 # environment
 
--.bashrc aliases
--.tmux config
--.vim config
+-.bashrc aliases  
+-.tmux config  
+-.vim config  
 
 ## Vim installation
 ```
@@ -18,3 +18,12 @@ complains:
 cd ~/.vim/bundle/YouCompleteMe
 ./install.py --clang-completer
 ```
+
+## phpcs
+
+```
+composer global require "squizlabs/php_codesniffer=*"
+cd ~/ && composer require --dev "cakephp/cakephp-codesniffer=2.*"
+phpcs --config-set installed_paths ~/vendor/cakephp/cakephp-codesniffer
+```
+
