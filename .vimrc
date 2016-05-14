@@ -12,12 +12,20 @@ Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
-Plugin 'fholgado/minibufexpl.vim'
 Plugin 'qpkorr/vim-bufkill'
+Plugin 'vim-airline/vim-airline'
+Bundle 'joonty/vdebug'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
 " Vundle config end
+
+" Custom hotkeys phil
+let mapleader = "`"
+map <Leader>h :bp<CR>
+map <Leader>l :bn<CR>
+map <Leader>j :lnext<CR>
+map <Leader>k :lprevious<CR>
 
 " Not sure why, but gnome terminal doesn't show colors correctly without
 " re-setting the background. 
@@ -88,3 +96,6 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " buffkill - close current buffer with ctl + c
 map <C-c> :BD<cr>
+
+" airline
+let g:airline#extensions#tabline#enabled = 1
