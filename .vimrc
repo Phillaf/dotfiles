@@ -99,3 +99,6 @@ map <C-c> :BD<cr>
 
 " airline
 let g:airline#extensions#tabline#enabled = 1
+
+" keep undo history while changing buffers
+set hidden
