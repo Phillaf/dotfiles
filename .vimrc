@@ -102,3 +102,6 @@ let g:airline#extensions#tabline#enabled = 1
 
 " keep undo history while changing buffers
 set hidden
+
+" filetype indentation
+autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
