@@ -7,5 +7,6 @@ README.md
 !.bashrc
 !.tmux.conf
 !.vimrc
+!.gitconfig
 
 # whitelist subdirectory example: !*/.vim

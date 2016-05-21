@@ -1,5 +1,9 @@
 # .bashrc
 
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
 # Source global definitions
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
@@ -14,3 +18,4 @@ setxkbmap -option ctrl:nocaps
 
 alias phpcs='phpcs -p --extensions=php --standard=CakePHP ./src'
 alias ctags='ctags -R --exclude=.git --exclude=*assets/vendor --exclude=*webroot --exclude=node_modules --fields=+l'
+alias dc=docker-compose

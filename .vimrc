@@ -48,7 +48,8 @@ set expandtab
 :set list
 
 " Show line numbers
-:set nu
+set nu
+set relativenumber
 
 " Make vimdiff use cleaner colors
 highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red1
