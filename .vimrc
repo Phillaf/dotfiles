@@ -14,6 +14,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
 Plugin 'qpkorr/vim-bufkill'
 Plugin 'vim-airline/vim-airline'
+Plugin 'adoy/vim-php-refactoring-toolbox'
 Bundle 'joonty/vdebug'
 
 call vundle#end()            " required
