@@ -16,6 +16,8 @@ Plugin 'qpkorr/vim-bufkill'
 Plugin 'vim-airline/vim-airline'
 Plugin 'adoy/vim-php-refactoring-toolbox'
 Bundle 'joonty/vdebug'
+Plugin 'yegappan/grep'
+" Bundle 'joonty/vim-phpqa.git'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -86,6 +88,9 @@ let g:syntastic_check_on_wq = 0
 
 let g:syntastic_php_phpcs_args='--standard=CakePHP'
 
+" NERDTree show hidden files (toggle this with I)
+let NERDTreeShowHidden=1
+
 " NERDTree toggle
 map <C-n> :NERDTreeToggle<CR>
 
@@ -107,3 +112,7 @@ set hidden
 
 " filetype indentation
 autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
+
+" joonty/vim-phpwa -> php code coverage
+" Clover code coverage XML file
+"let g:phpqa_codecoverage_file = "/build/logs/clover.xml"
