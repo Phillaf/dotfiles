@@ -112,7 +112,12 @@ set hidden
 
 " filetype indentation
 autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+autocmd FileType css setlocal shiftwidth=2 tabstop=2
 
 " joonty/vim-phpwa -> php code coverage
 " Clover code coverage XML file
 "let g:phpqa_codecoverage_file = "/build/logs/clover.xml"
+
+" This makes webpack recognize file changes
+:set backupcopy=yes
