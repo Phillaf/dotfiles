@@ -26,4 +26,6 @@ composer global require "squizlabs/php_codesniffer=*"
 cd ~/ && composer require --dev "cakephp/cakephp-codesniffer=2.*"
 phpcs --config-set installed_paths ~/vendor/cakephp/cakephp-codesniffer
 ```
+## Tweaks
 
+dconf-editor > org/gnome/shell/overrides > workspaces-only-on-primary
