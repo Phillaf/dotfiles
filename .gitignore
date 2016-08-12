@@ -1,7 +1,7 @@
 # Ignore everything
 *
 
-# But not these files
+# Whitelisted files
 README.md
 !.gitignore
 !.gitmodules
@@ -10,4 +10,5 @@ README.md
 !.vimrc
 !.gitconfig
 
-# whitelist subdirectory example: !*/.vim
+# Whitelisted folders
+!/Scripts
