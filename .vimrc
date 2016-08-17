@@ -8,6 +8,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'vim-scripts/cscope_macros.vim'
 Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/syntastic'
@@ -15,8 +16,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'qpkorr/vim-bufkill'
 Plugin 'vim-airline/vim-airline'
 Plugin 'adoy/vim-php-refactoring-toolbox'
-Bundle 'joonty/vdebug'
 Plugin 'yegappan/grep'
+Bundle 'joonty/vdebug'
 " Bundle 'joonty/vim-phpqa.git'
 
 call vundle#end()            " required
@@ -98,8 +99,8 @@ map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Open a NERDTree automatically when vim starts up if no files were specified
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " buffkill - close current buffer with ctl + c
 map <C-c> :BD<cr>
@@ -121,3 +122,6 @@ autocmd FileType css setlocal shiftwidth=2 tabstop=2
 
 " This makes webpack recognize file changes
 :set backupcopy=yes
+
+" Cscope gives an error when the file exists
+set nocscopeverbose
