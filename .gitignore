@@ -11,11 +11,11 @@ README.md
 !.gitconfig
 
 # Whitelisted folders
-!/Scripts
-!/Scripts/**
+!/.scripts
+!/.scripts/**
 
 !.vim/
 !.vim/**
 
 # Actual ignores
-.vim/bundle
+.vim/bundle/
