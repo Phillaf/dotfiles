@@ -6,10 +6,10 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'mattn/emmet-vim'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'vim-scripts/cscope_macros.vim'
-Plugin 'shawncplus/phpcomplete.vim'
+" Plugin 'mattn/emmet-vim'
+" Plugin 'Valloric/YouCompleteMe'
+" Plugin 'vim-scripts/cscope_macros.vim'
+" Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
@@ -17,7 +17,7 @@ Plugin 'qpkorr/vim-bufkill'
 Plugin 'vim-airline/vim-airline'
 Plugin 'adoy/vim-php-refactoring-toolbox'
 Plugin 'yegappan/grep'
-Bundle 'joonty/vdebug'
+" Bundle 'joonty/vdebug'
 " Bundle 'joonty/vim-phpqa.git'
 
 call vundle#end()            " required
@@ -26,10 +26,12 @@ filetype plugin indent on    " required
 
 " Custom hotkeys phil
 let mapleader = "`"
-map <Leader>h :bp<CR>
-map <Leader>l :bn<CR>
-map <Leader>j :lnext<CR>
-map <Leader>k :lprevious<CR>
+noremap <Leader>h :bp<CR>
+noremap <Leader>l :bn<CR>
+noremap <Leader>j :lnext<CR>
+noremap <Leader>k :lprevious<CR>
+noremap <Leader>ve :vsplit $MYVIMRC<CR>
+noremap <Leader>vs :source $MYVIMRC<CR> :source ~/.vim/plugin/*<CR>
 
 " Not sure why, but gnome terminal doesn't show colors correctly without
 " re-setting the background. 
