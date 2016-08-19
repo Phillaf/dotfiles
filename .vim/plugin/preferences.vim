@@ -19,3 +19,9 @@ set hidden
 
 " This makes webpack recognize file changes
 set backupcopy=yes
+
+" Use spaces instad of tabs
+set shiftwidth=4
+set softtabstop=4
+set smarttab
+set expandtab

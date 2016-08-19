@@ -6,7 +6,6 @@ noremap <Leader>j :lnext<CR>
 noremap <Leader>k :lprevious<CR>
 noremap <Leader>ve :vsplit $MYVIMRC<CR>
 noremap <Leader>vs :source $MYVIMRC<CR>
-noremap <Leader>lol echo 'test'<CR>
 
 " Use F3 to toggle highlight search
 set hlsearch!
