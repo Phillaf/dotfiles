@@ -1,0 +1,21 @@
+" Color scheme
+color default
+
+" Show hidden chars
+set list
+
+" Show line numbers
+set nu
+set relativenumber
+
+" Indentation
+set smartindent
+
+" Disable error bell
+set noeb vb t_vb=
+
+" keep undo history while changing buffers
+set hidden
+
+" This makes webpack recognize file changes
+set backupcopy=yes
