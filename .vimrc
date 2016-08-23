@@ -4,16 +4,18 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Bundle 'arnaud-lb/vim-php-namespace'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'adoy/vim-php-refactoring-toolbox'
+Plugin 'arnaud-lb/vim-php-namespace'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'joonty/vdebug'
 Plugin 'majutsushi/tagbar'
 Plugin 'qpkorr/vim-bufkill'
 Plugin 'scrooloose/nerdtree'
 Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'vim-airline/vim-airline'
+Plugin 'vim-scripts/cscope_macros.vim'
 Plugin 'yegappan/grep'
 
 call vundle#end()            " required
