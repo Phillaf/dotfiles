@@ -6,7 +6,7 @@ call vundle#begin()
 
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'adoy/vim-php-refactoring-toolbox'
+Plugin 'Phillaf/vim-php-refactoring-toolbox'
 Plugin 'arnaud-lb/vim-php-namespace'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'joonty/vdebug'
