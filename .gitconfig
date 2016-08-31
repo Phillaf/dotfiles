@@ -3,6 +3,7 @@
 	name = Philippe Lafrance
 [core]
 	editor = vim
+	excludesfile = ~/.gitignore_global
 [push]
 	default = simple
 [diff]

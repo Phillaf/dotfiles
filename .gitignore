@@ -4,6 +4,7 @@
 # Whitelisted files
 README.md
 !.gitignore
+!.gitignore_global
 !.gitmodules
 !.bashrc
 !.tmux.conf
