@@ -1,16 +1,8 @@
-" Bundle 'joonty/vdebug'
 " Plugin 'mattn/emmet-vim'
-
-
-" Plugin 'vim-scripts/cscope_macros.vim'
-" Cscope gives an error when the file exists
-"set nocscopeverbose
-
 
 " Bundle 'joonty/vim-phpqa.git'
 " Clover code coverage XML file
 "let g:phpqa_codecoverage_file = "/build/logs/clover.xml"
-
 
 " Plugin 'scrooloose/syntastic'
 "set statusline+=%#warningmsg#
