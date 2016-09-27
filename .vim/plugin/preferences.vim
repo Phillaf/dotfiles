@@ -4,6 +4,9 @@ color default
 " Show hidden chars
 set list
 
+" Show line at 120 chars
+set colorcolumn=120
+
 " Show line numbers
 set nu
 set relativenumber
