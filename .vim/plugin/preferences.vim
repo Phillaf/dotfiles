@@ -8,7 +8,6 @@ set list
 set colorcolumn=120
 
 " Show line numbers
-set nu
 set relativenumber
 
 " Indentation

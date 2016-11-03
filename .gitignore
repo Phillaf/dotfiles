@@ -12,8 +12,8 @@ README.md
 !.gitconfig
 
 # Whitelisted folders
-!/.scripts
-!/.scripts/**
+!.scripts
+!.scripts/**
 
 !.vim/
 !.vim/**
