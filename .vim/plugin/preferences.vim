@@ -30,7 +30,7 @@ set smarttab
 set expandtab
 
 " Refresh tags everytime we save
-function! UpdateTags()
-    silent execute '!tmux new -d "bin/phpctags -C tags.cache -R ."'
-endfunction
-autocmd BufWritePost *.php call UpdateTags()
+" function! UpdateTags()
+"     silent execute '!tmux new -d "bin/phpctags -C tags.cache -R ."'
+" endfunction
+" autocmd BufWritePost *.php call UpdateTags()
