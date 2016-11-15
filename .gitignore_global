@@ -2,4 +2,6 @@
 *.orig
 phpctags
 tags
+tags.lock
+tags.temp
 tags.cache
