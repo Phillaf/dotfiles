@@ -4,15 +4,16 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Plugin 'adoy/vim-php-refactoring-toolbox'
-Plugin 'joonty/vdebug'
-Plugin 'vim-scripts/cscope_macros.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'adoy/vim-php-refactoring-toolbox'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'arnaud-lb/vim-php-namespace'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'joonty/vdebug'
+Plugin 'joonty/vim-phpqa'
+Plugin 'joonty/vim-phpunitqf'
 Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'qpkorr/vim-bufkill'
 Plugin 'scrooloose/nerdtree'
