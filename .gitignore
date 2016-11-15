@@ -22,5 +22,9 @@ README.md
 !.vim/
 !.vim/**
 
+# Keep the undodir
+.vim/undodir/**
+!.vim/undodir/.gitkeep
+
 # Actual ignores
 .vim/bundle/

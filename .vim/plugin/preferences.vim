@@ -34,3 +34,14 @@ set expandtab
 "     silent execute '!tmux new -d "bin/phpctags -C tags.cache -R ."'
 " endfunction
 " autocmd BufWritePost *.php call UpdateTags()
+
+" Swapfile and undos
+set noswapfile
+set nobackup
+set nowritebackup
+
+" Persistent undos
+if !&diff
+  set undodir=~/.vim/undodir
+  set undofile
+endif
