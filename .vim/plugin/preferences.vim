@@ -45,3 +45,7 @@ if !&diff
   set undodir=~/.vim/undodir
   set undofile
 endif
+
+" Auto-save everything
+set updatetime=1000
+autocmd CursorHold * update
