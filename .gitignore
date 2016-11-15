@@ -7,6 +7,7 @@ README.md
 !.gitignore_global
 !.gitmodules
 !.bashrc
+!.bash_profile
 !.tmux.conf
 !.vimrc
 !.gitconfig
@@ -14,6 +15,9 @@ README.md
 # Whitelisted folders
 !.scripts
 !.scripts/**
+
+#!/golang
+#!/golang/**
 
 !.vim/
 !.vim/**
