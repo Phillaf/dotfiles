@@ -46,6 +46,9 @@ if !&diff
   set undofile
 endif
 
-" Auto-save everything
-set updatetime=1000
-autocmd CursorHold * update
+" Spell check shortcut.
+:command SpellOn :setlocal spell spelllang=en_ca
+:command SpellOff :setlocal nospell
+
+" Trim whitespace
+:command Trim :%s/\s\+$//e
