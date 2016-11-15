@@ -19,3 +19,13 @@ setxkbmap -option ctrl:nocaps
 # Prevent the stupid stop-printing-terminal feature that I accidentaly hit with ctl+s
 # recover with ctl+q
 stty -ixon
+
+export VIM_PROFILE="default"
+
+alias vim='vim -u "~/.vim/profiles/$VIM_PROFILE"'
+
+# Source local definitions
+if [ -f ~/.bash_local ]; then
+	. ~/.bash_local
+fi
+
