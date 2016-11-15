@@ -19,8 +19,3 @@ setxkbmap -option ctrl:nocaps
 # Prevent the stupid stop-printing-terminal feature that I accidentaly hit with ctl+s
 # recover with ctl+q
 stty -ixon
-
-alias phpcs='phpcs -p --extensions=php --standard=CakePHP ./src'
-alias ctags='ctags -R --exclude=.git --exclude=*assets/vendor --exclude=*webroot --exclude=node_modules --fields=+l'
-alias dc=docker-compose
-#alias vim=vimx
