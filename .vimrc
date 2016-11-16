@@ -4,7 +4,6 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'adoy/vim-php-refactoring-toolbox'
 Plugin 'airblade/vim-gitgutter'
@@ -17,6 +16,7 @@ Plugin 'joonty/vim-phpunitqf'
 Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'qpkorr/vim-bufkill'
 Plugin 'scrooloose/nerdtree'
+Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-airline/vim-airline'
 Plugin 'yegappan/grep'

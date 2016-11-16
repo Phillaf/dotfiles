@@ -1,7 +1,8 @@
-*.swp
 *.orig
+*.swp
+.ctags
 phpctags
 tags
+tags.cache
 tags.lock
 tags.temp
-tags.cache

@@ -52,3 +52,8 @@ endif
 
 " Trim whitespace
 :command Trim :%s/\s\+$//e
+
+" Enable autocomplete for php
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+autocmd FileType ctp set omnifunc=phpcomplete#CompletePHP
+" autocmd CompleteDone * pclose
