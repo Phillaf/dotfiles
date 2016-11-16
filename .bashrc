@@ -21,6 +21,7 @@ setxkbmap -option ctrl:nocaps
 stty -ixon
 
 export VIM_PROFILE="default"
+export PATH=$PATH:~/.config/composer/vendor/bin/
 
 alias vim='vim -u "~/.vim/profiles/$VIM_PROFILE"'
 
