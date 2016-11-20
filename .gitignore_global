@@ -1,6 +1,7 @@
 *.orig
 *.swp
 .ctags
+clover.xml
 phpctags
 tags
 tags.cache

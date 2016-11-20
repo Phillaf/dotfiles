@@ -1,7 +1,7 @@
 source ~/.vimrc
 let profile = "default"
 
-let g:phpqa_codesniffer_args = "--standard=PSR2"
+let g:phpqa_codesniffer_args = "--standard=CakePHP"
 let g:phpqa_codecoverage_file = "clover.xml"
-let g:phpqa_messdetector_ruleset = "cleancode,codesize,controversial,design,naming,unusedcode"
+let g:phpqa_messdetector_ruleset = "codesize,controversial,design,naming,unusedcode"
 let g:phpunit_args = "--coverage-clover=clover.xml"
