@@ -20,5 +20,5 @@ if !exists('*Eatchar')
 endif
 
 " Abbrev
-autocmd FileType php iabbrev <buffer> if if () {<CR>}<ESC>k4li<C-R>=Eatchar('\s')<CR>
-autocmd FileType php iabbrev <buffer> foreach foreach () {<CR>}<ESC>k9li<C-R>=Eatchar('\s')<CR>
+" autocmd FileType php iabbrev <buffer> if if () {<CR>}<ESC>k4li<C-R>=Eatchar('\s')<CR>
+" autocmd FileType php iabbrev <buffer> foreach foreach () {<CR>}<ESC>k9li<C-R>=Eatchar('\s')<CR>
