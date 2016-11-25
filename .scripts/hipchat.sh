@@ -6,4 +6,4 @@ enabled=1
 gpgcheck=0
 EOF_hipchat'
 
-sudo dnf hipchat4
+sudo dnf install hipchat4
