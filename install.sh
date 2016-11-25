@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo dnf update
+sudo dnf update -y
 
 git submodule init
 git submodule update
@@ -10,3 +10,4 @@ source .scripts/google-chrome.sh
 source .scripts/docker.sh
 source .scripts/docker-permissions.sh
 source .scripts/gsettings.sh
+source .scripts/php7.sh
