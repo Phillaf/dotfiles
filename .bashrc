@@ -22,7 +22,11 @@ stty -ixon
 
 export VIM_PROFILE="default"
 export PATH=$PATH:~/.composer/vendor/bin/
+xport VIM_PROFILE="mindgeek"
 
+alias cov='phpunit --coverage-text'
+alias sniff='phpcs -p --standard=PSR2 ./src/ ./tests/'
+alias fix='php-cs-fixer fix --dry-run --verbose --diff'
 alias vim='vim -u "~/.vim/profiles/$VIM_PROFILE"'
 
 # Source local definitions
