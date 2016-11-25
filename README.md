@@ -1,23 +1,12 @@
-# environment
+# Dotfiles
 
--.bashrc aliases  
--.tmux config  
--.vim config  
+I don't recommend using these unless you understand and want their behavior.
 
-## Vim installation
-```
-git submodule init
-git submodule update
-vim +PluginInstall +qall # or in vim :PluginInstall
-```
+-.bashrc  
+-.tmux  
+-.vim  
 
-## phpcs
+--
 
-```
-composer global require "squizlabs/php_codesniffer=*"
-cd ~/ && composer require --dev "cakephp/cakephp-codesniffer=2.*"
-phpcs --config-set installed_paths ~/vendor/cakephp/cakephp-codesniffer
-```
-## Tweaks
-
-dconf-editor > org/gnome/shell/overrides > workspaces-only-on-primary
+Released under the DWTFPL  
+No rights reserved  

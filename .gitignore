@@ -12,6 +12,7 @@ README.md
 !.vimrc
 !.gitconfig
 !.notags
+!install.sh
 
 # Whitelisted folders
 !.scripts
