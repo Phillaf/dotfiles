@@ -13,6 +13,7 @@ README.md
 !.gitconfig
 !.notags
 !install.sh
+!.env.mindgeek
 
 # Whitelisted folders
 !.scripts

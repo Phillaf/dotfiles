@@ -9,24 +9,26 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
-# Uncomment the following line if you don't like systemctl's auto-paging feature:
-# export SYSTEMD_PAGER=
 
 # User specific aliases and functions
-
 setxkbmap -option ctrl:nocaps
 
 # Prevent the stupid stop-printing-terminal feature that I accidentaly hit with ctl+s
 # recover with ctl+q
 stty -ixon
 
+
 export VIM_PROFILE="default"
+export PHPUNIT_OPTIONS=""
+export PHPCS_OPTIONS="-p --standard=PSR2 ./src/"
+export PHPFIXER_OPTIONS="--dry-run --verbose --diff"
 export PATH=$PATH:~/.composer/vendor/bin/
-
-alias vim='vim -u "~/.vim/profiles/$VIM_PROFILE"'
-
-# Source local definitions
-if [ -f ~/.bash_local ]; then
-	. ~/.bash_local
+# Source environment variables
+if [ -f ~/.env ]; then
+	. ~/.env
 fi
 
+alias vim='vim -u "~/.vim/profiles/$VIM_PROFILE"'
+alias cov='phpunit $PHPUNIT_OPTIONS --coverage-text'
+alias sniff='phpcs $PHPCS_OPTIONS'
+alias fix='php-cs-fixer fix $PHP_FIXER_OPTIONS'
