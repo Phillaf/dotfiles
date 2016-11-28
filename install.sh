@@ -11,3 +11,4 @@ source .scripts/docker.sh
 source .scripts/docker-permissions.sh
 source .scripts/gsettings.sh
 source .scripts/php7.sh
+source .scripts/ctags.sh
