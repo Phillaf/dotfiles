@@ -22,7 +22,7 @@ export VIM_PROFILE="default"
 export PHPUNIT_OPTIONS=""
 export PHPCS_OPTIONS="-p --standard=PSR2 ./src/"
 export PHPFIXER_OPTIONS="--dry-run --verbose --diff"
-export PATH=$PATH:~/.composer/vendor/bin/
+export PATH=$PATH:~/.config/composer/vendor/bin/
 # Source environment variables
 if [ -f ~/.env ]; then
 	. ~/.env
