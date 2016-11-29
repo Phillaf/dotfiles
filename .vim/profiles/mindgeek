@@ -3,7 +3,7 @@ let profile = "mindgeek"
 
 let g:phpqa_codesniffer_args = "--standard=PSR2"
 let g:phpqa_codecoverage_file = "clover.xml"
-let g:phpqa_messdetector_ruleset = "codesize,controversial,design,unusedcode"
+let g:phpqa_messdetector_ruleset = "codesize,controversial,design"
 let g:phpunit_args = "-c ./test/phpunit.xml.dist --coverage-clover=clover.xml"
 
 :command Fix :!php-cs-fixer fix --dry-run --verbose --fixers=-declare_equal_normalize,-braces,-return,-concat_without_spaces,-new_with_braces,-phpdoc_to_comment --diff %:p
