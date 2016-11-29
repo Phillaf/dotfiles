@@ -31,4 +31,4 @@ fi
 alias vim='vim -u "~/.vim/profiles/$VIM_PROFILE"'
 alias cov='phpunit $PHPUNIT_OPTIONS --coverage-text'
 alias sniff='phpcs $PHPCS_OPTIONS'
-alias fix='php-cs-fixer fix $PHP_FIXER_OPTIONS'
+alias fix='php-cs-fixer fix $PHPFIXER_OPTIONS'
