@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo dnf install ctags -y
+sudo dnf install ctags cscope -y
