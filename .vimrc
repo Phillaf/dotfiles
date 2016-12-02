@@ -4,10 +4,12 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+Plugin 'Valloric/ListToggle'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'adoy/vim-php-refactoring-toolbox'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'arnaud-lb/vim-php-namespace'
+Plugin 'brookhong/cscope.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'joonty/vdebug'
