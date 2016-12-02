@@ -8,7 +8,8 @@ sudo dnf update -y
 sudo dnf install php -y
 sudo dnf install composer -y
 
-composer require phpunit/phpunit
-composer require squizlabs/php_codesniffer
-composer require phpmd/phpmd
-composer require friendsofphp/php-cs-fixer
+composer global require phpunit/phpunit
+composer global require squizlabs/php_codesniffer
+composer global require phpmd/phpmd
+composer global require friendsofphp/php-cs-fixer
+composer global require techlivezheng/phpctags
