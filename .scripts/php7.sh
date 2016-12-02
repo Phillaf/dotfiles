@@ -5,8 +5,7 @@ sudo dnf install remi-release-24.rpm -y
 rm remi-release-24.rpm -y
 dnf config-manager --set-enabled remi-php70
 sudo dnf update -y
-sudo dnf install php -y
-sudo dnf install composer -y
+sudo dnf install php composer php-xdebug -y
 
 composer global require phpunit/phpunit
 composer global require squizlabs/php_codesniffer
