@@ -33,3 +33,4 @@ alias cov='phpunit $PHPUNIT_OPTIONS --coverage-text'
 alias sniff='phpcs $PHPCS_OPTIONS'
 alias fix='php-cs-fixer fix $PHPFIXER_OPTIONS'
 alias ctags='phpctags'
+alias space="du -h . | grep '[0-9\.]\+G'"
