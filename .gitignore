@@ -25,6 +25,10 @@ README.md
 !.vim/
 !.vim/**
 
+!.config
+!.config/nvim
+!.config/nvim/**
+
 # Keep the undodir
 .vim/undodir/**
 !.vim/undodir/.gitkeep
