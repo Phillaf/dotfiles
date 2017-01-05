@@ -23,7 +23,6 @@ Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-scripts/Greplace.vim'
-Plugin 'yegappan/grep'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
