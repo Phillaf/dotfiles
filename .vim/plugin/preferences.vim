@@ -57,3 +57,5 @@ endif
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType ctp set omnifunc=phpcomplete#CompletePHP
 " autocmd CompleteDone * pclose
+
+set list listchars=tab:▸\ ,eol:¬,trail:·
