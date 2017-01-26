@@ -21,7 +21,6 @@ stty -ixon
 export VIM_PROFILE="default"
 export PHPUNIT_OPTIONS=""
 export PHPCS_OPTIONS="-p --standard=PSR2 ./src/"
-export PHPFIXER_OPTIONS="--dry-run --verbose --diff"
 export PATH=$PATH:~/.config/composer/vendor/bin/
 # Source environment variables
 if [ -f ~/.env ]; then
@@ -31,7 +30,8 @@ fi
 alias vim='vim -u "~/.vim/profiles/$VIM_PROFILE"'
 alias cov='phpunit $PHPUNIT_OPTIONS --coverage-text'
 alias sniff='phpcs $PHPCS_OPTIONS'
-alias fix='php-cs-fixer fix $PHPFIXER_OPTIONS'
+alias fix='php-cs-fixer fix --filters=$PHPFIXER_FILTERS'
+alias diffix='sh ~/.scripts/utils/diffix.sh'
 alias ctags='phpctags'
 alias space="du -h . | grep '[0-9\.]\+G'"
 alias dc="docker-compose"
