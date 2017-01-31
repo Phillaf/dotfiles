@@ -35,3 +35,5 @@ alias diffix='sh ~/.scripts/utils/diffix.sh'
 alias ctags='phpctags'
 alias space="du -h . | grep '[0-9\.]\+G'"
 alias dc="docker-compose"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
