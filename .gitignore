@@ -29,6 +29,8 @@ README.md
 !.config
 !.config/nvim
 !.config/nvim/init.vim
+!.config/nvim/autoload/
+!.config/nvim/autoload/**
 
 # Keep the undodir
 .vim/undodir/**
