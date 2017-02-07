@@ -9,14 +9,12 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
-
 # User specific aliases and functions
 setxkbmap -option ctrl:nocaps
 
 # Prevent the stupid stop-printing-terminal feature that I accidentaly hit with ctl+s
 # recover with ctl+q
 stty -ixon
-
 
 export VIM_PROFILE="default"
 export PHPUNIT_OPTIONS=""
@@ -27,14 +25,12 @@ if [ -f ~/.env ]; then
 	. ~/.env
 fi
 
-alias vim='vim -u "~/.vim/profiles/$VIM_PROFILE"'
 alias cov='phpunit $PHPUNIT_OPTIONS --coverage-text'
 alias sniff='phpcs $PHPCS_OPTIONS'
 alias fix='php-cs-fixer fix --filters=$PHPFIXER_FILTERS'
 alias diffix='sh ~/.scripts/utils/diffix.sh'
-alias ctags='phpctags'
 alias space="du -h . | grep '[0-9\.]\+G'"
 alias dc="docker-compose"
-alias dd="docker stop \$(docker ps -a -q) && docker rm \$(docker ps -a -q)"
+alias dd="docker stop \$(docker ps -a -q); docker rm \$(docker ps -a -q); docker volume rm \$(docker volume ls -q)"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
