@@ -28,10 +28,10 @@ README.md
 
 # nvim config
 !.config
-!.config/nvim
-!.config/nvim/init.vim
-!.config/nvim/autoload/
-!.config/nvim/autoload/**
+!.config/nvim/
+!.config/nvim/**
+.config/nvim/.netrwhist
+.config/nvim/plugged/
 
 # Keep the undodir
 .vim/undodir/**

@@ -57,6 +57,7 @@ set showmode
 set noerrorbells
 set hlsearch
 set hidden
+:filetype on
 
 " Hotkeys
 noremap ; :
