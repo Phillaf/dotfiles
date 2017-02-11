@@ -25,6 +25,7 @@ README.md
 
 !.vim/
 !.vim/**
+.vim/.netrwhist
 
 # nvim config
 !.config
