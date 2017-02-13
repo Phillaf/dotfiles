@@ -88,3 +88,14 @@ nmap <silent> <leader>T :TestFile<CR>
 nmap <silent> <leader>a :TestSuite<CR>
 nmap <silent> <leader>u :TestLast<CR>
 nmap <silent> <leader>g :TestVisit<CR>
+
+function! neomake#makers#ft#php#phpcs() abort
+     return {
+         \ 'args': 
+            \ '--report=csv '.
+            \ '--exclude=Symfony2.Commenting.FunctionComment,Symfony2.Commenting.ClassComment',
+         \ 'errorformat':
+             \ '%-GFile\,Line\,Column\,Type\,Message\,Source\,Severity%.%#,'.
+             \ '"%f"\,%l\,%c\,%t%*[a-zA-Z]\,"%m"\,%*[a-zA-Z0-9_.-]\,%*[0-9]%.%#',
+         \ }
+ endfunction

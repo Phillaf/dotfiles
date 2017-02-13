@@ -13,5 +13,9 @@ composer global require phpmd/phpmd
 composer global require friendsofphp/php-cs-fixer
 composer global require techlivezheng/phpctags
 
+composer global require escapestudios/symfony2-coding-standard
+phpcs --config-set installed_paths ~/.config/composer/vendor/escapestudios/symfony2-coding-standard
+phpcs --config-set default_standard Symfony2
+
 sudo pecl install msgpack
 sudo echo "extension=msgpack.so" > /etc/php.d/50-msgpack.ini
