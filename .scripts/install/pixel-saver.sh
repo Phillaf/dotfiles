@@ -1,5 +1,7 @@
 #!/bin/bash
 
+dnf install xorg-x11-utils
+
 git clone https://github.com/deadalnix/pixel-saver.git
 
 mkdir -p ~/.local/share/gnome-shell/extensions

@@ -7,3 +7,4 @@ tags
 tags.cache
 tags.lock
 tags.temp
+.phpcd/
