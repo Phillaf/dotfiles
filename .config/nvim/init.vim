@@ -7,6 +7,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'janko-m/vim-test'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'mhartington/oceanic-next'
 Plug 'neomake/neomake'
 Plug 'php-vim/phpcd.vim', { 'for': 'php' , 'do': 'composer update' }
 Plug 'tpope/vim-fugitive'
@@ -92,10 +93,14 @@ nmap <silent> <leader>g :TestVisit<CR>
 function! neomake#makers#ft#php#phpcs() abort
      return {
          \ 'args': 
-            \ '--report=csv '.
-            \ '--exclude=Symfony2.Commenting.FunctionComment,Symfony2.Commenting.ClassComment',
+            \ '--report=csv ',
          \ 'errorformat':
              \ '%-GFile\,Line\,Column\,Type\,Message\,Source\,Severity%.%#,'.
              \ '"%f"\,%l\,%c\,%t%*[a-zA-Z]\,"%m"\,%*[a-zA-Z0-9_.-]\,%*[0-9]%.%#',
          \ }
  endfunction
+
+colorscheme OceanicNext
+highlight Normal ctermbg=none
+highlight NonText ctermbg=none
+let g:airline_theme='oceanicnext'
