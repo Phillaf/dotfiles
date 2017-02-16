@@ -2,11 +2,13 @@
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'airblade/vim-gitgutter'
+Plug 'arnaud-lb/vim-php-namespace'
 Plug 'brookhong/cscope.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'janko-m/vim-test'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'ludovicchabant/vim-gutentags'
 Plug 'mhartington/oceanic-next'
 Plug 'neomake/neomake'
 Plug 'php-vim/phpcd.vim', { 'for': 'php' , 'do': 'composer update' }
@@ -84,23 +86,35 @@ autocmd! BufWritePost * Neomake
 nnoremap <leader>fa :call CscopeFindInteractive(expand('<cword>'))<CR>
 
 " janko-m/vim-test
-nmap <silent> <leader>t :TestNearest<CR>
-nmap <silent> <leader>T :TestFile<CR>
-nmap <silent> <leader>a :TestSuite<CR>
-nmap <silent> <leader>u :TestLast<CR>
-nmap <silent> <leader>g :TestVisit<CR>
+nmap <silent> <leader>tn :TestNearest<CR>
+nmap <silent> <leader>tf :TestFile<CR>
+nmap <silent> <leader>ts :TestSuite<CR>
+nmap <silent> <leader>tl :TestLast<CR>
+nmap <silent> <leader>tv :TestVisit<CR>
 
+" Phpcs options in neomake
 function! neomake#makers#ft#php#phpcs() abort
-     return {
-         \ 'args': 
+    return {
+        \ 'args': 
             \ '--report=csv ',
-         \ 'errorformat':
-             \ '%-GFile\,Line\,Column\,Type\,Message\,Source\,Severity%.%#,'.
-             \ '"%f"\,%l\,%c\,%t%*[a-zA-Z]\,"%m"\,%*[a-zA-Z0-9_.-]\,%*[0-9]%.%#',
-         \ }
- endfunction
+        \ 'errorformat':
+            \ '%-GFile\,Line\,Column\,Type\,Message\,Source\,Severity%.%#,'.
+            \ '"%f"\,%l\,%c\,%t%*[a-zA-Z]\,"%m"\,%*[a-zA-Z0-9_.-]\,%*[0-9]%.%#',
+        \ }
+endfunction
 
+" Color scheme
 colorscheme OceanicNext
 highlight Normal ctermbg=none
 highlight NonText ctermbg=none
 let g:airline_theme='oceanicnext'
+
+" Php namespace
+function! IPhpInsertUse()
+    call PhpInsertUse()
+    call feedkeys('a',  'n')
+endfunction
+autocmd FileType php inoremap <Leader>u <Esc>:call IPhpInsertUse()<CR>
+autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
+autocmd FileType php inoremap <Leader>s <Esc>:call PhpSortUse()<CR>
+autocmd FileType php noremap <Leader>s :call PhpSortUse()<CR>
