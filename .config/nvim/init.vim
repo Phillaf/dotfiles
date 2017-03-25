@@ -6,6 +6,7 @@ Plug 'arnaud-lb/vim-php-namespace'
 Plug 'brookhong/cscope.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'janko-m/vim-test'
+Plug 'joonty/vdebug'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'ludovicchabant/vim-gutentags'
@@ -57,7 +58,7 @@ noremap <Leader>ve :vsplit $MYVIMRC<CR>
 noremap <Leader>vs :source $MYVIMRC<CR>
 noremap ; :
 nnoremap Q @q
-nnoremap <F3> :set hlsearch!<CR>
+nnoremap <Leader>n :set hlsearch!<CR>
 noremap <C-c> :bd<CR>
 noremap <C-p> :FZF<CR>
 
@@ -118,3 +119,19 @@ autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
 autocmd FileType php noremap <Leader>s :call PhpSortUse()<CR>
 
 let g:php_namespace_sort = "'{,'}-1sort i"
+    let g:vdebug_options= {
+    \    "port" : 9000,
+    \    "server" : '',
+    \    "timeout" : 20,
+    \    "on_close" : 'detach',
+    \    "break_on_open" : 0,
+    \    "ide_key" : '',
+    \    "path_maps" : {},
+    \    "debug_window_level" : 0,
+    \    "debug_file_level" : 0,
+    \    "debug_file" : "",
+    \    "watch_window_style" : 'expanded',
+    \    "marker_default" : '⬦',
+    \    "marker_closed_tree" : '▸',
+    \    "marker_open_tree" : '▾'
+    \}
