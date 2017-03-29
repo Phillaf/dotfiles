@@ -9,6 +9,7 @@ Plug 'janko-m/vim-test'
 Plug 'joonty/vdebug'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/vim-easy-align'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'mhartington/oceanic-next'
 Plug 'neomake/neomake'
@@ -18,7 +19,6 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 Plug 'valloric/listtoggle'
 Plug 'vim-airline/vim-airline'
-
 
 " Initialize plugin system
 call plug#end()
@@ -135,3 +135,6 @@ let g:php_namespace_sort = "'{,'}-1sort i"
     \    "marker_closed_tree" : '▸',
     \    "marker_open_tree" : '▾'
     \}
+
+xmap <Leader>ga <Plug>(EasyAlign)
+nmap <Leader>ga <Plug>(EasyAlign)
