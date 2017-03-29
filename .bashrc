@@ -29,7 +29,10 @@ alias cov='phpunit $PHPUNIT_OPTIONS --coverage-text'
 alias sniff='phpcs $PHPCS_OPTIONS'
 alias space="du -h . | grep '[0-9\.]\+G'"
 alias dc="docker-compose"
-alias dd="docker stop \$(docker ps -a -q); docker rm \$(docker ps -a -q); docker volume rm \$(docker volume ls -q); docker network rm \$(docker network ls -q)"
+alias dcd="docker stop \$(docker ps -a -q); docker rm \$(docker ps -a -q); docker volume rm \$(docker volume ls -q); docker network rm \$(docker network ls -q)"
 alias vim='nvim'
+alias please='sudo $( history -p !! )'
+alias fuck='sudo $( history -p !! )'
+alias fucking='sudo'
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
