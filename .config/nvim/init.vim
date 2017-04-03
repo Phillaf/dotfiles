@@ -59,7 +59,7 @@ noremap <Leader>vs :source $MYVIMRC<CR>
 noremap ; :
 nnoremap Q @q
 nnoremap <Leader>n :set hlsearch!<CR>
-noremap <C-c> :bd<CR>
+noremap <C-c> :bp<bar>sp<bar>bn<bar>bd<CR>
 noremap <C-p> :FZF<CR>
 
 " Window navigation
