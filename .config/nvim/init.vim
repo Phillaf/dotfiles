@@ -11,6 +11,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'ludovicchabant/vim-gutentags'
+Plug 'majutsushi/tagbar'
 Plug 'mhartington/oceanic-next'
 Plug 'neomake/neomake'
 Plug 'php-vim/phpcd.vim', { 'for': 'php' , 'do': 'composer update' }
@@ -119,22 +120,28 @@ autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
 autocmd FileType php noremap <Leader>s :call PhpSortUse()<CR>
 
 let g:php_namespace_sort = "'{,'}-1sort i"
-    let g:vdebug_options= {
-    \    "port" : 9000,
-    \    "server" : '',
-    \    "timeout" : 20,
-    \    "on_close" : 'detach',
-    \    "break_on_open" : 0,
-    \    "ide_key" : '',
-    \    "path_maps" : {},
-    \    "debug_window_level" : 0,
-    \    "debug_file_level" : 0,
-    \    "debug_file" : "",
-    \    "watch_window_style" : 'expanded',
-    \    "marker_default" : '⬦',
-    \    "marker_closed_tree" : '▸',
-    \    "marker_open_tree" : '▾'
-    \}
 
+" joonty/vdebug
+let g:vdebug_options= {
+\    "port" : 9000,
+\    "server" : '',
+\    "timeout" : 20,
+\    "on_close" : 'detach',
+\    "break_on_open" : 0,
+\    "ide_key" : '',
+\    "path_maps" : {},
+\    "debug_window_level" : 0,
+\    "debug_file_level" : 0,
+\    "debug_file" : "",
+\    "watch_window_style" : 'expanded',
+\    "marker_default" : '⬦',
+\    "marker_closed_tree" : '▸',
+\    "marker_open_tree" : '▾'
+\}
+
+" Easy Align
 xmap <Leader>ga <Plug>(EasyAlign)
 nmap <Leader>ga <Plug>(EasyAlign)
+
+" Tagbar
+nmap <Leader>b :TagbarToggle<CR>
