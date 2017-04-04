@@ -85,7 +85,8 @@ let g:airline#extensions#tabline#enabled = 1
 autocmd! BufWritePost * Neomake
 
 " Cscope util
-nnoremap <leader>fa :call CscopeFindInteractive(expand('<cword>'))<CR>
+"nnoremap <leader>fa :call CscopeFindInteractive(expand('<cword>'))<CR>
+nnoremap  <leader>fa :call CscopeFind('g', expand('<cword>'))<CR>
 
 " janko-m/vim-test
 nmap <silent> <leader>tn :TestNearest<CR>
@@ -148,3 +149,6 @@ nmap <Leader>b :TagbarToggle<CR>
 
 " Gutentags
 let g:gutentags_ctags_executable_php = 'ctags -R --language=php --php-kinds=cfit'
+
+" Cscope
+let g:cscope_ignored_dir = 'vendor'
