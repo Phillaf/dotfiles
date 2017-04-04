@@ -145,3 +145,6 @@ nmap <Leader>ga <Plug>(EasyAlign)
 
 " Tagbar
 nmap <Leader>b :TagbarToggle<CR>
+
+" Gutentags
+let g:gutentags_ctags_executable_php = 'ctags -R --language=php --php-kinds=cfit'
