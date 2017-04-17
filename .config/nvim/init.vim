@@ -62,6 +62,7 @@ nnoremap Q @q
 nnoremap <Leader>n :set hlsearch!<CR>
 noremap <C-c> :bp<bar>sp<bar>bn<bar>bd<CR>
 noremap <C-p> :FZF<CR>
+noremap <Leader>gg :grep -rn --exclude=tags --exclude-dir={vendor,.git,.phpcd} 
 
 " Window navigation
 :tnoremap <A-h> <C-\><C-n><C-w>h
@@ -85,8 +86,7 @@ let g:airline#extensions#tabline#enabled = 1
 autocmd! BufWritePost * Neomake
 
 " Cscope util
-"nnoremap <leader>fa :call CscopeFindInteractive(expand('<cword>'))<CR>
-nnoremap  <leader>fa :call CscopeFind('g', expand('<cword>'))<CR>
+nnoremap <leader>fa :call CscopeFindInteractive(expand('<cword>'))<CR>
 
 " janko-m/vim-test
 nmap <silent> <leader>tn :TestNearest<CR>
