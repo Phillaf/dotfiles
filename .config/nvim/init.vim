@@ -2,10 +2,12 @@
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'airblade/vim-gitgutter'
+Plug 'alvan/vim-closetag'
 Plug 'arnaud-lb/vim-php-namespace'
 Plug 'brookhong/cscope.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'janko-m/vim-test'
+Plug 'jiangmiao/auto-pairs'
 Plug 'joonty/vdebug'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -62,7 +64,7 @@ nnoremap Q @q
 nnoremap <Leader>n :set hlsearch!<CR>
 noremap <C-c> :bp<bar>sp<bar>bn<bar>bd<CR>
 noremap <C-p> :FZF<CR>
-noremap <Leader>gg :grep -rn --exclude=tags --exclude-dir={vendor,.git,.phpcd} 
+noremap <Leader>gg :grep -rn --exclude={tags,.php_cs.cache} --exclude-dir={vendor,.git,.phpcd} 
 
 " Window navigation
 :tnoremap <A-h> <C-\><C-n><C-w>h
