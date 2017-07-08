@@ -22,3 +22,12 @@ sudo pecl install msgpack
 
 sudo -i
 echo "extension=msgpack.so" > /etc/php.d/50-msgpack.ini
+
+sudo dnf install libsodium libsodium-devel
+sudo pecl install libsodium
+echo "extension=libsodium.so" > /etc/php.d/50-libsodium.ini
+
+sudo dnf install mcrypt php-mcrypt
+
+sudo pecl install redis
+echo "extension=redis.so" > /etc/php.d/50-redis.ini
