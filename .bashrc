@@ -25,8 +25,8 @@ if [ -f ~/.env ]; then
 	. ~/.env
 fi
 
-alias cov='phpunit $PHPUNIT_OPTIONS --coverage-text'
-alias sniff='phpcs $PHPCS_OPTIONS'
+alias cov='bin/phpunit --coverage-clover clover.xml --testsuite unit --coverage-text'
+alias sniff='bin/phpcs'
 alias space="du -h . | grep '[0-9\.]\+G'"
 alias dc="docker-compose"
 alias dcd="docker stop \$(docker ps -a -q); docker rm \$(docker ps -a -q); docker volume rm \$(docker volume ls -q); docker network rm \$(docker network ls -q)"

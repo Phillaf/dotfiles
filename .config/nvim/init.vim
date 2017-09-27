@@ -9,6 +9,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'janko-m/vim-test'
 Plug 'jiangmiao/auto-pairs'
 Plug 'joonty/vdebug'
+Plug 'joonty/vim-phpqa'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
@@ -55,6 +56,7 @@ set noerrorbells
 set hlsearch
 set hidden
 :filetype on
+"set spell spelllang=en_ca
 
 " Hotkeys
 let mapleader = "\<Space>"
@@ -67,6 +69,7 @@ nnoremap <Leader>n :set hlsearch!<CR>
 noremap <C-c> :bp<bar>sp<bar>bn<bar>bd<CR>
 noremap <C-p> :FZF<CR>
 noremap <Leader>gg :grep -rn --exclude={tags,.php_cs.cache} --exclude-dir={vendor,.git,.phpcd} 
+noremap <Leader>fa :grep -rn --exclude={tags,.php_cs.cache} --exclude-dir={vendor,.git,.phpcd} <cword> ./
 
 " Window navigation
 :tnoremap <A-h> <C-\><C-n><C-w>h
@@ -88,9 +91,6 @@ let g:airline#extensions#tabline#enabled = 1
 
 " Run neomake on all saves
 autocmd! BufWritePost * Neomake
-
-" Cscope util
-nnoremap <leader>fa :call CscopeFindInteractive(expand('<cword>'))<CR>
 
 " janko-m/vim-test
 nmap <silent> <leader>tn :TestNearest<CR>
@@ -156,3 +156,10 @@ let g:gutentags_ctags_executable_php = 'ctags -R --language=php --php-kinds=cfit
 
 " Cscope
 let g:cscope_ignored_dir = 'vendor'
+
+" Clover code coverage XML file
+let g:phpqa_codecoverage_file = "clover.xml"
+let g:phpqa_messdetector_autorun = 0
+let g:phpqa_codesniffer_autorun = 0
+let g:phpqa_codecoverage_autorun = 1
+let g:phpqa_open_loc = 0
