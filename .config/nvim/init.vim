@@ -16,12 +16,14 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar'
 Plug 'mhartington/oceanic-next'
 Plug 'neomake/neomake'
-Plug 'php-vim/phpcd.vim', { 'for': 'php' , 'do': 'composer update' }
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 Plug 'valloric/listtoggle'
 Plug 'vim-airline/vim-airline'
+
+" disabled because last release is broken
+"Plug 'php-vim/phpcd.vim', { 'for': 'php' , 'do': 'composer update' }
 
 " Initialize plugin system
 call plug#end()
