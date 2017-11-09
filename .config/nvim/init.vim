@@ -9,7 +9,6 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'janko-m/vim-test'
 Plug 'jiangmiao/auto-pairs'
 Plug 'joonty/vdebug'
-Plug 'joonty/vim-phpqa'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
@@ -23,8 +22,11 @@ Plug 'tpope/vim-vinegar'
 Plug 'valloric/listtoggle'
 Plug 'vim-airline/vim-airline'
 
-" disabled because last release is broken
+" Broken: caused a large error log when I saved files
 "Plug 'php-vim/phpcd.vim', { 'for': 'php' , 'do': 'composer update' }
+
+" Broken: This plugin pops an error when using Gvdiff
+"Plug 'joonty/vim-phpqa'
 
 " Initialize plugin system
 call plug#end()
