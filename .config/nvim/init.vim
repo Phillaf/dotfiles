@@ -165,3 +165,18 @@ let g:phpqa_messdetector_autorun = 0
 let g:phpqa_codesniffer_autorun = 0
 let g:phpqa_codecoverage_autorun = 1
 let g:phpqa_open_loc = 0
+
+
+" Hack to get netrw to close the buffer when we pick a file
+" ref: https://github.com/tpope/vim-vinegar/issues/13#issuecomment-315584214
+set nohidden
+augroup netrw_buf_hidden_fix
+    autocmd!
+
+    " Set all non-netrw buffers to bufhidden=hide
+    autocmd BufWinEnter *
+                \  if &ft != 'netrw'
+                \|     set bufhidden=hide
+                \| endif
+
+augroup end
