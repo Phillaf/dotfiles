@@ -31,6 +31,8 @@ README.md
 !.config
 !.config/nvim/
 !.config/nvim/**
+!.config/git/
+!.config/git/**
 .config/nvim/.netrwhist
 .config/nvim/plugged/
 
