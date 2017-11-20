@@ -7,8 +7,8 @@ fi
 if [ -f /etc/skel/.bashrc ]; then
 	. /etc/skel/.bashrc
 fi
-source .config/git/git-prompt.sh
-source .config/git/git-completion.bash
+source ~/.config/git/git-prompt.sh
+source ~/.config/git/git-completion.bash
 
 # Disable caps lock
 setxkbmap -option ctrl:nocaps
