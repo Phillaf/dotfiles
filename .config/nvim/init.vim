@@ -19,7 +19,7 @@ Plug 'neomake/neomake'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
-Plug 'valloric/listtoggle'
+Plug 'milkypostman/vim-togglelist'
 Plug 'vim-airline/vim-airline'
 
 " Broken: caused a large error log when I saved files
