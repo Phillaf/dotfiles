@@ -73,6 +73,9 @@ noremap <C-p> :FZF<CR>
 noremap <Leader>gg :grep -rn --exclude={tags,.php_cs.cache} --exclude-dir={vendor,.git,.phpcd} 
 noremap <Leader>fa :grep -rn --exclude={tags,.php_cs.cache} --exclude-dir={vendor,.git,.phpcd} <cword> ./
 
+noremap <C-u> 20<C-y><CR>
+noremap <C-d> 20<C-e><CR>
+
 " Window navigation
 :tnoremap <A-h> <C-\><C-n><C-w>h
 :tnoremap <A-j> <C-\><C-n><C-w>j
