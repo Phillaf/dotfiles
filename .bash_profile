@@ -7,7 +7,6 @@ fi
 
 # User specific environment and startup programs
 
-PATH=$PATH:$HOME/.local/bin:$HOME/bin:$HOME/golang/bin
+PATH=$PATH:$HOME/.local/bin:$HOME/bin
 
-export GOPATH="$HOME/golang"
 export PATH

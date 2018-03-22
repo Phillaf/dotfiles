@@ -2,31 +2,26 @@
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'airblade/vim-gitgutter'
-Plug 'alvan/vim-closetag'
 Plug 'arnaud-lb/vim-php-namespace'
 Plug 'brookhong/cscope.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'janko-m/vim-test'
 Plug 'jiangmiao/auto-pairs'
-Plug 'joonty/vdebug'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'junegunn/vim-easy-align'
 Plug 'ludovicchabant/vim-gutentags'
-Plug 'majutsushi/tagbar'
-Plug 'mhartington/oceanic-next'
 Plug 'neomake/neomake'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 Plug 'milkypostman/vim-togglelist'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'chriskempson/base16-vim'
 
 " Broken: caused a large error log when I saved files
 "Plug 'php-vim/phpcd.vim', { 'for': 'php' , 'do': 'composer update' }
 
-" Broken: This plugin pops an error when using Gvdiff
-"Plug 'joonty/vim-phpqa'
 
 " Initialize plugin system
 call plug#end()
@@ -60,7 +55,7 @@ set hidden
 :filetype on
 "set spell spelllang=en_ca
 
-" Hotkeys
+" Generic Hotkeys
 let mapleader = "\<Space>"
 
 noremap <Leader>ve :vsplit $MYVIMRC<CR>
@@ -72,9 +67,6 @@ noremap <C-c> :bp<bar>sp<bar>bn<bar>bd<CR>
 noremap <C-p> :FZF<CR>
 noremap <Leader>gg :grep -rn --exclude={tags,.php_cs.cache} --exclude-dir={vendor,.git,.phpcd} 
 noremap <Leader>fa :grep -rn --exclude={tags,.php_cs.cache} --exclude-dir={vendor,.git,.phpcd} <cword> ./
-
-noremap <C-u> 20<C-y><CR>
-noremap <C-d> 20<C-e><CR>
 
 " Window navigation
 :tnoremap <A-h> <C-\><C-n><C-w>h
@@ -116,10 +108,11 @@ function! neomake#makers#ft#php#phpcs() abort
 endfunction
 
 " Color scheme
-colorscheme OceanicNext
-highlight Normal ctermbg=none
-highlight NonText ctermbg=none
-let g:airline_theme='oceanicnext'
+set termguicolors
+let g:airline_theme='base16_default'
+colorscheme base16-default-dark-gnome
+highlight Normal ctermbg=NONE guibg=NONE
+highlight NonText ctermbg=NONE guibg=NONE
 
 " Php namespace
 function! IPhpInsertUse()
@@ -130,31 +123,6 @@ autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
 autocmd FileType php noremap <Leader>s :call PhpSortUse()<CR>
 
 let g:php_namespace_sort = "'{,'}-1sort i"
-
-" joonty/vdebug
-let g:vdebug_options= {
-\    "port" : 9000,
-\    "server" : '',
-\    "timeout" : 20,
-\    "on_close" : 'detach',
-\    "break_on_open" : 0,
-\    "ide_key" : '',
-\    "path_maps" : {},
-\    "debug_window_level" : 0,
-\    "debug_file_level" : 0,
-\    "debug_file" : "",
-\    "watch_window_style" : 'expanded',
-\    "marker_default" : '⬦',
-\    "marker_closed_tree" : '▸',
-\    "marker_open_tree" : '▾'
-\}
-
-" Easy Align
-xmap <Leader>ga <Plug>(EasyAlign)
-nmap <Leader>ga <Plug>(EasyAlign)
-
-" Tagbar
-nmap <Leader>b :TagbarToggle<CR>
 
 " Gutentags
 let g:gutentags_ctags_executable_php = 'ctags -R --language=php --php-kinds=cfit'
@@ -172,14 +140,21 @@ let g:phpqa_open_loc = 0
 
 " Hack to get netrw to close the buffer when we pick a file
 " ref: https://github.com/tpope/vim-vinegar/issues/13#issuecomment-315584214
-set nohidden
-augroup netrw_buf_hidden_fix
-    autocmd!
+setlocal bufhidden=delete
 
-    " Set all non-netrw buffers to bufhidden=hide
-    autocmd BufWinEnter *
-                \  if &ft != 'netrw'
-                \|     set bufhidden=hide
-                \| endif
+if !exists("*s:BDeleteNetrw")
+  function! s:BDeleteNetrw()
+    for i in range(bufnr('$'), 1, -1)
+      if buflisted(i)
+        if getbufvar(i, 'netrw_browser_active') == 1
+          silent exe 'bdelete ' . i
+        endif
+      endif
+    endfor
+  endfunction
+endif
 
-augroup end
+augroup netrw_buffergator
+  autocmd! * <buffer>
+  autocmd BufLeave <buffer> call s:BDeleteNetrw()
+augroup END
