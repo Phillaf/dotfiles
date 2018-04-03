@@ -1,13 +1,12 @@
 #!/bin/bash
 
-wget http://rpms.remirepo.net/fedora/remi-release-24.rpm
-sudo dnf install remi-release-24.rpm -y
-rm remi-release-24.rpm -y
+sudo dnf install http://rpms.remirepo.net/fedora/remi-release-26.rpm
+sudo dnf config-manager --set-enabled remi
+sudo dnf config-manager --set-enabled remi-php72
+
 dnf install dnf-plugins-core
-dnf config-manager --set-enabled remi-php71
 sudo dnf update -y
 sudo dnf install php php-devel composer php-xdebug -y
-
 
 composer global require phpunit/phpunit
 composer global require squizlabs/php_codesniffer
