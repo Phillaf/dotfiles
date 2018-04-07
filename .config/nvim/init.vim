@@ -140,21 +140,14 @@ let g:phpqa_open_loc = 0
 
 " Hack to get netrw to close the buffer when we pick a file
 " ref: https://github.com/tpope/vim-vinegar/issues/13#issuecomment-315584214
-setlocal bufhidden=delete
+set nohidden
+augroup netrw_buf_hidden_fix
+    autocmd!
 
-if !exists("*s:BDeleteNetrw")
-  function! s:BDeleteNetrw()
-    for i in range(bufnr('$'), 1, -1)
-      if buflisted(i)
-        if getbufvar(i, 'netrw_browser_active') == 1
-          silent exe 'bdelete ' . i
-        endif
-      endif
-    endfor
-  endfunction
-endif
+    " Set all non-netrw buffers to bufhidden=hide
+    autocmd BufWinEnter *
+                \  if &ft != 'netrw'
+                \|     set bufhidden=hide
+                \| endif
 
-augroup netrw_buffergator
-  autocmd! * <buffer>
-  autocmd BufLeave <buffer> call s:BDeleteNetrw()
-augroup END
+augroup end
