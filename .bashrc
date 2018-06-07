@@ -33,7 +33,8 @@ export PS1='\[\033[38;5;37m\]\A\[\033[38;5;15m\] \[\033[38;5;33m\]\u\[\033[38;5;
 export VIM_PROFILE="default"
 export PHPUNIT_OPTIONS=""
 export PHPCS_OPTIONS="-p --standard=PSR2 ./src/"
-export PATH=$PATH:~/.config/composer/vendor/bin/
+export PATH=$PATH:~/.config/composer/vendor/bin/:~/.config/npm-global/bin:~/.config/n/bin
+export N_PREFIX=~/.config/n
 
 alias rm='rm -i'
 alias cp='cp -i'
