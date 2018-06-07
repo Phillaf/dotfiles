@@ -1,7 +1,6 @@
 " Specify a directory for plugins (for Neovim: ~/.local/share/nvim/plugged)
 call plug#begin('~/.config/nvim/plugged')
 
-Plug 'airblade/vim-gitgutter'
 Plug 'arnaud-lb/vim-php-namespace'
 Plug 'brookhong/cscope.vim'
 Plug 'editorconfig/editorconfig-vim'
@@ -10,11 +9,11 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'ludovicchabant/vim-gutentags'
+Plug 'milkypostman/vim-togglelist'
 Plug 'neomake/neomake'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
-Plug 'milkypostman/vim-togglelist'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'chriskempson/base16-vim'
@@ -22,6 +21,8 @@ Plug 'chriskempson/base16-vim'
 " Broken: caused a large error log when I saved files
 "Plug 'php-vim/phpcd.vim', { 'for': 'php' , 'do': 'composer update' }
 
+" Issue with vim-php-namespace
+"Plug 'airblade/vim-gitgutter'
 
 " Initialize plugin system
 call plug#end()
@@ -110,7 +111,7 @@ endfunction
 " Color scheme
 set termguicolors
 let g:airline_theme='base16_default'
-colorscheme base16-default-dark-gnome
+colorscheme base16-default-dark
 highlight Normal ctermbg=NONE guibg=NONE
 highlight NonText ctermbg=NONE guibg=NONE
 
