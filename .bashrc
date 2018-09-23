@@ -13,6 +13,9 @@ fi
 if [ -f ~/.config/git/git-completion.bash ]; then
 	. ~/.config/git/git-completion.bash
 fi
+if [ -f ~/.config/nvm/nvm.sh ]; then
+        source ~/.config/nvm/nvm.sh
+fi
 
 # Disable caps lock
 setxkbmap -option ctrl:nocaps

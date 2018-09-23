@@ -18,10 +18,12 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'chriskempson/base16-vim'
 
-" Broken: caused a large error log when I saved files
+" Broken: caused a large error log when saving files
 "Plug 'php-vim/phpcd.vim', { 'for': 'php' , 'do': 'composer update' }
 
 " Issue with vim-php-namespace
+" https://github.com/airblade/vim-gitgutter/issues/351
+" Plug 'airblade/vim-gitgutter'
 "Plug 'airblade/vim-gitgutter'
 
 " Initialize plugin system
@@ -152,3 +154,7 @@ augroup netrw_buf_hidden_fix
                 \| endif
 
 augroup end
+
+" Expand current path
+noremap <Leader>p :put=expand('%:p')<CR>
+
