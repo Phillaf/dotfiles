@@ -1,0 +1,3 @@
+.dotfiles
+.config/nvim/.netrwhist
+.config/nvim/plugged/
