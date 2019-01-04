@@ -1,0 +1,11 @@
+*.orig
+*.swp
+.ctags
+.php_cs.cache
+.phpcd/
+clover.xml
+phpctags
+tags
+tags.cache
+tags.lock
+tags.temp
