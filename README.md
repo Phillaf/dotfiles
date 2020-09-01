@@ -3,8 +3,8 @@
 I don't recommend using thwese unless you understand and want their behavior.
 
 - [ubuntu18](https://github.com/phillaf/dotfiles/tree/ubuntu18)  
-- [fedora28](https://github.com/phillaf/dotfiles/tree/fedora28)  
 - [fedora32](https://github.com/phillaf/dotfiles/tree/fedora32)
+- [fedora28](https://github.com/phillaf/dotfiles/tree/fedora28)  
 - [korora25](https://github.com/phillaf/dotfiles/tree/korora25)
 
 ```
