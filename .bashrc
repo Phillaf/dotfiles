@@ -27,6 +27,7 @@ stty -ixon
 
 export PATH=$PATH:~/.config/composer/vendor/bin/:~/.config/npm-global/bin
 export XDG_CONFIG_HOME="$HOME/.config"
+export DOCKER_BUILDKIT=1
 
 alias space="du -h . | grep '[0-9\.]\+G'"
 alias dc="docker-compose"
