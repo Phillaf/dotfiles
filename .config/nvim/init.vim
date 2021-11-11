@@ -100,15 +100,15 @@ nmap <silent> <leader>tl :TestLast<CR>
 nmap <silent> <leader>tv :TestVisit<CR>
 
 " Phpcs options in neomake
-" function! neomake#makers#ft#php#phpcs() abort
-"     return {
-"         \ 'args': 
-"             \ '--report=csv ',
-"         \ 'errorformat':
-"             \ '%-GFile\,Line\,Column\,Type\,Message\,Source\,Severity%.%#,'.
-"             \ '"%f"\,%l\,%c\,%t%*[a-zA-Z]\,"%m"\,%*[a-zA-Z0-9_.-]\,%*[0-9]%.%#',
-"         \ }
-" endfunction
+function! neomake#makers#ft#php#phpcs() abort
+    return {
+        \ 'args': 
+            \ '--report=csv ',
+        \ 'errorformat':
+            \ '%-GFile\,Line\,Column\,Type\,Message\,Source\,Severity%.%#,'.
+            \ '"%f"\,%l\,%c\,%t%*[a-zA-Z]\,"%m"\,%*[a-zA-Z0-9_.-]\,%*[0-9]%.%#',
+        \ }
+endfunction
 
 " Color scheme
 set termguicolors
