@@ -1,13 +1,13 @@
 #!/bin/bash
 
-# https://fedoramagazine.org/docker-and-fedora-32/
+# https://fedoramagazine.org/docker-and-fedora-35/
 
-sudo grubby --update-kernel=ALL --args="systemd.unified_cgroup_hierarchy=0"
+ sudo dnf -y install dnf-plugins-core
+ sudo dnf config-manager \
+    --add-repo \
+    https://download.docker.com/linux/fedora/docker-ce.repo
 
-sudo firewall-cmd --permanent --zone=trusted --add-interface=docker0
-sudo firewall-cmd --permanent --zone=FedoraWorkstation --add-masquerade
-
-sudo dnf install moby-engine docker-compose
+sudo dnf install docker-ce docker-ce-cli containerd.io
 
 sudo groupadd docker
 sudo usermod -aG docker $USER
