@@ -1,0 +1,11 @@
+#!/bin/bash
+
+exec docker run \
+    --network=host \
+    --rm \
+    -v $(pwd):$(pwd) \
+    -w $(pwd) \
+    phphil \
+    php "$@"
+
+exit $?

@@ -1,7 +1,12 @@
 #!/bin/bash
 
-sudo apt-get install software-properties-common
-sudo add-apt-repository ppa:ondrej/php
-sudo apt-get update
-sudo apt-get install -y php7.3
-sudo apt-get install php-pear php7.3-curl php7.3-dev php7.3-gd php7.3-mbstring php7.3-zip php7.3-mysql php7.3-xml php7.3-amqp php7.3-bcmath composer
+sudo ln -s ~/bin/composer /usr/local/bin/composer
+sudo ln -s ~/bin/intelephense /usr/local/bin/intelephense
+sudo ln -s ~/bin/phan /usr/local/bin/phan
+sudo ln -s ~/bin/php /usr/local/bin/php
+sudo ln -s ~/bin/phpcbf /usr/local/bin/phpcbf
+sudo ln -s ~/bin/phpcs /usr/local/bin/phpcs
+sudo ln -s ~/bin/phpmd /usr/local/bin/phpmd
+sudo ln -s ~/bin/phpstan /usr/local/bin/phpstan
+sudo ln -s ~/bin/psalm /usr/local/bin/psalm
+sudo ln -s ~/bin/tlint /usr/local/bin/tlint

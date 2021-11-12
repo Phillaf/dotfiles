@@ -1,0 +1,12 @@
+#!/bin/bash
+
+exec docker run \
+    --network=host \
+    --rm \
+    -it \
+    -v $(pwd):$(pwd) \
+    -w $(pwd) \
+    phphil \
+    composer "$@"
+
+exit $?
