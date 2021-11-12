@@ -1,30 +1,22 @@
+set shell=bash\ -l
+
 " Specify a directory for plugins (for Neovim: ~/.local/share/nvim/plugged)
 call plug#begin('~/.config/nvim/plugged')
 
+"Plug 'airblade/vim-gitgutter'
 Plug 'arnaud-lb/vim-php-namespace'
-Plug 'brookhong/cscope.vim'
+Plug 'chriskempson/base16-vim'
+Plug 'dense-analysis/ale'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'janko-m/vim-test'
-Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'ludovicchabant/vim-gutentags'
 Plug 'milkypostman/vim-togglelist'
-Plug 'neomake/neomake'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'chriskempson/base16-vim'
-
-" Broken: caused a large error log when saving files
-"Plug 'php-vim/phpcd.vim', { 'for': 'php' , 'do': 'composer update' }
-
-" Issue with vim-php-namespace
-" https://github.com/airblade/vim-gitgutter/issues/351
-" Plug 'airblade/vim-gitgutter'
-"Plug 'airblade/vim-gitgutter'
 
 " Initialize plugin system
 call plug#end()
@@ -33,6 +25,7 @@ call plug#end()
 set noswapfile
 set nobackup
 set nowritebackup
+set mouse=a
 
 " Persistent undos
 if !&diff
@@ -70,7 +63,7 @@ noremap <C-c> :bp<bar>sp<bar>bn<bar>bd<CR>
 noremap <C-p> :FZF<CR>
 noremap <Leader>gg :grep -rn --exclude={tags,.php_cs.cache} --exclude-dir={vendor,.git,.phpcd} 
 noremap <Leader>fa :grep -rn --exclude={tags,.php_cs.cache} --exclude-dir={vendor,.git,.phpcd} <cword> ./
-
+noremap <Leader>fu :call CscopeFindInteractive(expand('<cword>'))<CR>
 " Window navigation
 :tnoremap <A-h> <C-\><C-n><C-w>h
 :tnoremap <A-j> <C-\><C-n><C-w>j
@@ -80,17 +73,13 @@ noremap <Leader>fa :grep -rn --exclude={tags,.php_cs.cache} --exclude-dir={vendo
 :nnoremap <A-j> <C-w>j
 :nnoremap <A-k> <C-w>k
 :nnoremap <A-l> <C-w>l
-
 " Exit terminal
 :tnoremap <Esc> <C-\><C-n>
-
-" Plugins config
+" Expand current path
+noremap <Leader>p :put=expand('%:p')<CR>
 
 " Use Airline as the tab manager
 let g:airline#extensions#tabline#enabled = 1
-
-" Run neomake on all saves
-autocmd! BufWritePost * Neomake
 
 " janko-m/vim-test
 nmap <silent> <leader>tn :TestNearest<CR>
@@ -99,17 +88,6 @@ nmap <silent> <leader>ts :TestSuite<CR>
 nmap <silent> <leader>tl :TestLast<CR>
 nmap <silent> <leader>tv :TestVisit<CR>
 
-" Phpcs options in neomake
-function! neomake#makers#ft#php#phpcs() abort
-    return {
-        \ 'args': 
-            \ '--report=csv ',
-        \ 'errorformat':
-            \ '%-GFile\,Line\,Column\,Type\,Message\,Source\,Severity%.%#,'.
-            \ '"%f"\,%l\,%c\,%t%*[a-zA-Z]\,"%m"\,%*[a-zA-Z0-9_.-]\,%*[0-9]%.%#',
-        \ }
-endfunction
-
 " Color scheme
 set termguicolors
 let g:airline_theme='base16_default'
@@ -117,44 +95,14 @@ colorscheme base16-default-dark
 highlight Normal ctermbg=NONE guibg=NONE
 highlight NonText ctermbg=NONE guibg=NONE
 
-" Php namespace
-function! IPhpInsertUse()
-    call PhpInsertUse()
-    call feedkeys('a',  'n')
-endfunction
-autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
-autocmd FileType php noremap <Leader>s :call PhpSortUse()<CR>
-
-let g:php_namespace_sort = "'{,'}-1sort i"
-
-" Gutentags
-let g:gutentags_ctags_executable_php = 'ctags -R --language=php --php-kinds=cfit'
-
-" Cscope
-let g:cscope_ignored_dir = 'vendor'
-
-" Clover code coverage XML file
-let g:phpqa_codecoverage_file = "clover.xml"
-let g:phpqa_messdetector_autorun = 0
-let g:phpqa_codesniffer_autorun = 0
-let g:phpqa_codecoverage_autorun = 1
-let g:phpqa_open_loc = 0
-
-
 " Hack to get netrw to close the buffer when we pick a file
 " ref: https://github.com/tpope/vim-vinegar/issues/13#issuecomment-315584214
-set nohidden
-augroup netrw_buf_hidden_fix
-    autocmd!
+let g:netrw_fastbrowse = 0
 
-    " Set all non-netrw buffers to bufhidden=hide
-    autocmd BufWinEnter *
-                \  if &ft != 'netrw'
-                \|     set bufhidden=hide
-                \| endif
+" ALE configs
+ "let g:ale_php_php_executable = 'docker run --rm -it --volume $(pwd):$(pwd) -w $(pwd) phphil php'
+"let g:ale_fix_on_save = 1
+"let g:ale_lint_on_text_changed = 1
+"let g:ale_set_highlights = 1
 
-augroup end
-
-" Expand current path
-noremap <Leader>p :put=expand('%:p')<CR>
-
+let g:ale_linters = {'php': ['intelephense', 'php']}
