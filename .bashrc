@@ -18,9 +18,6 @@ fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-# Disable caps lock
-setxkbmap -option ctrl:nocaps
-
 # Prevent the stupid stop-printing-terminal feature that I accidentaly hit with ctl+s
 # recover with ctl+q
 stty -ixon
