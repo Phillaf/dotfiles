@@ -12,3 +12,6 @@ sudo dnf install docker-ce docker-ce-cli containerd.io
 sudo groupadd docker
 sudo usermod -aG docker $USER
 newgrp docker
+
+
+sudo dnf -y install docker-compose
