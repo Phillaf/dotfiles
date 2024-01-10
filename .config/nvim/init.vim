@@ -1,24 +1,20 @@
-set shell=bash\ -l
 
-" Specify a directory for plugins (for Neovim: ~/.local/share/nvim/plugged)
 call plug#begin('~/.config/nvim/plugged')
 
-"Plug 'airblade/vim-gitgutter'
-Plug 'arnaud-lb/vim-php-namespace'
+Plug 'airblade/vim-gitgutter'
 Plug 'chriskempson/base16-vim'
-Plug 'dense-analysis/ale'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'janko-m/vim-test'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
 Plug 'milkypostman/vim-togglelist'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
-"Plug 'vim-airline/vim-airline'
-"Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+
+" This plugin overrides my ftplugin configs
+let g:editorconfig = v:false
 
 " Initialize plugin system
 call plug#end()
@@ -108,3 +104,4 @@ let g:netrw_fastbrowse = 0
 "let g:ale_set_highlights = 1
 
 let g:ale_linters = {'php': ['intelephense', 'php']}
+let g:EditorConfig_verbose=1
