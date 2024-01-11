@@ -14,4 +14,4 @@ sudo usermod -aG docker $USER
 newgrp docker
 
 
-sudo dnf -y install docker-compose
+sudo dnf -y install docker-compose-plugin
